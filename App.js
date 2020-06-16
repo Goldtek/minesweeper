@@ -17,9 +17,9 @@ export default class App extends Component {
         this.moveAnimation = new Animated.Value(160);
         
         this.boardWidth = CELL_SIZE * BOARD_SIZE;
-        this.grid = Array.apply(null, Array(BOARD_SIZE)).map((el, idx) => {
-            return Array.apply(null, Array(BOARD_SIZE)).map((el, idx) => {
-                return null;
+        this.grid = Array.apply(0, Array(BOARD_SIZE)).map(row => {
+            return Array.apply(0, Array(BOARD_SIZE)).map(col => {
+                return 0;
             });
         });
     }
@@ -79,21 +79,19 @@ export default class App extends Component {
             this.grid[x][y].setState({
                 neighbors: neighbors
             })
-            
+
         } else {
             this.revealNeighbors(x, y);
         }
     }
 
     renderBoard = () => {
-        return Array.apply(null, Array(BOARD_SIZE)).map((el, rowIdx) => {
-            let cellList = Array.apply(null, Array(BOARD_SIZE)).map((el, colIdx) => {
+        return Array.apply(null, Array(BOARD_SIZE)).map((cell, rowIdx) => {
+            let cells = Array.apply(null, Array(BOARD_SIZE)).map((cell, colIdx) => {
                 return <Cell
                     onOpen={this.onOpen}
                     onDie={this.onDie}
                     key={colIdx}
-                    width={CELL_SIZE}
-                    height={CELL_SIZE}
                     x={colIdx}
                     y={rowIdx}
                     ref={(ref) => { this.grid[colIdx][rowIdx] = ref }}
@@ -102,7 +100,7 @@ export default class App extends Component {
 
             return (
                 <View key={rowIdx} style={{ width: this.boardWidth, height: CELL_SIZE, flexDirection: 'row'}}>
-                    {cellList}
+                    {cells}
                 </View>
             )
         });

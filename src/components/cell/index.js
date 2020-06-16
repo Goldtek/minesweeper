@@ -5,6 +5,8 @@ import {
   Image,
   Text
 } from 'react-native';
+
+import { CELL_SIZE } from '../../lib'
 import styles from './styles';
 import mines from '../../assets/images/mine.png';
 
@@ -14,7 +16,7 @@ class Cell extends Component {
 
         this.state = {
             opened: false,
-            isMine: Math.random() < 0.2,
+            isMine: Math.random() < 0.25,
             neighbors: null,
             clickedMine: false
         }
@@ -64,14 +66,14 @@ class Cell extends Component {
         if (!this.state.opened){
             return (
                 <TouchableOpacity onPress={() => { this.onOpen(true); }}>
-                    <View style={[ styles.cell, { width: this.props.width, height: this.props.height }]}/>
+                    <View style={[ styles.cell, { width: CELL_SIZE, height: CELL_SIZE }]}/>
                 </TouchableOpacity>
             )
         } else {
             let cellContent = null;
             if (this.state.isMine){
                 cellContent = (
-                    <Image source={mines} style={{ width: this.props.width / 2, height: this.props.height / 2}} resizeMode="contain" />
+                    <Image source={mines} style={{ width: CELL_SIZE / 2, height: CELL_SIZE / 2}} resizeMode="contain" />
                 )
             } else if (this.state.neighbors){
                 cellContent = (
@@ -80,7 +82,7 @@ class Cell extends Component {
             }
 
             return (
-                <View style={[ styles.cellOpened, { width: this.props.width, height: this.props.height, backgroundColor : this.state.clickedMine ? 'red' : '#bdbdbd' }]}>
+                <View style={[ styles.cellOpened, { width: CELL_SIZE, height: CELL_SIZE, backgroundColor : this.state.clickedMine ? 'red' : '#bdbdbd' }]}>
                     {cellContent}
                 </View>
             )
