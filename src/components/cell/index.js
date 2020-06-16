@@ -16,13 +16,13 @@ class Cell extends Component {
 
         this.state = {
             opened: false,
-            isMine: Math.random() < 0.25,
+            isMine: Math.random() < 0.25, // 25% of the cells should mine
             neighbors: null,
             clickedMine: false
         }
     }
 
-    revealWithoutCallback = () => {
+    unveil = () => {
         if (this.state.opened){
             return;
         }
@@ -32,12 +32,12 @@ class Cell extends Component {
         })
     }
 
-    onOpen = (userInitiated) => {
+    onOpen = (userClicked) => {
         if (this.state.opened){
             return;
         }
 
-        if (!userInitiated && this.state.isMine){
+        if (!userClicked && this.state.isMine){
             return;
         }
 
@@ -46,7 +46,7 @@ class Cell extends Component {
         }, () => {
             if (this.state.isMine){
                 this.props.onDie();
-                this.setState({ clickedMine: true })
+                this.setState({ clickedMine: true });
             } else {
                 this.props.onOpen(this.props.x, this.props.y);
             }

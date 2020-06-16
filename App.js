@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  Easing,
   Button,
   Animated,
   Text
 } from 'react-native';
 import Cell from './src/components/cell';
-import { BOARD_SIZE, CELL_SIZE } from './src/lib';
+import { BOARD_SIZE, CELL_SIZE, runAnimation } from './src/lib';
 
 export default class App extends Component {
     constructor(props){
@@ -17,6 +16,8 @@ export default class App extends Component {
         this.moveAnimation = new Animated.Value(160);
         
         this.boardWidth = CELL_SIZE * BOARD_SIZE;
+
+        // initialize each cell in the grid 
         this.grid = Array.apply(0, Array(BOARD_SIZE)).map(row => {
             return Array.apply(0, Array(BOARD_SIZE)).map(col => {
                 return 0;
@@ -25,34 +26,23 @@ export default class App extends Component {
     }
 
     showRetry = () => {
-      Animated.spring(this.moveAnimation, {
-        toValue: -150,
-        duration: 500,
-        useNativeDriver: true,
-        easing: Easing.out
-      }).start();
+      runAnimation(this.moveAnimation, -150);
     }
 
     hideRetry = () => {
-      Animated.spring(this.moveAnimation, {
-        toValue: 160,
-        duration: 500,
-        useNativeDriver: true,
-        easing: Easing.inOut,
-        
-      }).start();
+      runAnimation(this.moveAnimation, 160);
     }
 
     onDie = () => {
         this.showRetry();
         for(let i=0; i< BOARD_SIZE; i++){
             for(let j=0; j< BOARD_SIZE; j++){
-                this.grid[i][j].revealWithoutCallback();
+                this.grid[i][j].unveil();
             }
         }
     }
 
-    revealNeighbors = (x, y) => {
+    showNeighbors = (x, y) => {
         for(let row=-1;row<=1;row++){
             for(let col=-1;col<=1;col++){
                 if ((row != 0 || col != 0) && x + row >= 0 && x + row <= BOARD_SIZE - 1 && y + col >= 0 && y + col <= BOARD_SIZE - 1){
@@ -62,12 +52,14 @@ export default class App extends Component {
         }
     }
 
+     // onOpen get the mines around the cell by going to the -1 and +1 of both the column and row
+
     onOpen = (x, y) => {
-      // get the mines around the cell by going to the -1 and +1 of both the column and row
         let neighbors = 0;
         for(let row=-1;row<=1;row++){
             for(let col=-1;col<=1;col++){
-                if (x + row >= 0 && x + row <= BOARD_SIZE - 1 && y + col >= 0 && y + col <= BOARD_SIZE - 1){
+              //ensuring the row and column falls within the boardSize which i the size of the array that forms the grid BOARD_SIZE - 1 [0 - 9]
+               if (x + row >= 0 && x + row <= BOARD_SIZE - 1 && y + col >= 0 && y + col <= BOARD_SIZE - 1){
                     if (this.grid[x + row][y + col].state.isMine){
                         neighbors++;
                     }
@@ -79,27 +71,26 @@ export default class App extends Component {
             this.grid[x][y].setState({
                 neighbors: neighbors
             })
-
         } else {
-            this.revealNeighbors(x, y);
+            this.showNeighbors(x, y);
         }
     }
 
     renderBoard = () => {
-        return Array.apply(null, Array(BOARD_SIZE)).map((cell, rowIdx) => {
-            let cells = Array.apply(null, Array(BOARD_SIZE)).map((cell, colIdx) => {
+        return Array.apply(0, Array(BOARD_SIZE)).map((cell, rowIndex) => {
+            let cells = Array.apply(0, Array(BOARD_SIZE)).map((cell, colIndex) => {
                 return <Cell
                     onOpen={this.onOpen}
                     onDie={this.onDie}
-                    key={colIdx}
-                    x={colIdx}
-                    y={rowIdx}
-                    ref={(ref) => { this.grid[colIdx][rowIdx] = ref }}
+                    key={colIndex}
+                    x={colIndex}
+                    y={rowIndex}
+                    ref={(ref) => { this.grid[colIndex][rowIndex] = ref }}
                 />
             });
 
             return (
-                <View key={rowIdx} style={{ width: this.boardWidth, height: CELL_SIZE, flexDirection: 'row'}}>
+                <View key={rowIndex} style={{ width: this.boardWidth, height: CELL_SIZE, flexDirection: 'row'}}>
                     {cells}
                 </View>
             )
@@ -124,7 +115,7 @@ export default class App extends Component {
                     {this.renderBoard()}
                 </View>
                 <Animated.View style={{ transform: [{translateY: this.moveAnimation}] }}>
-                  <Text> You loose !!! </Text>
+                  <Text style={{ color: '#fff' }}> You loose !!! </Text>
                   <Button title="Retry" onPress={this.resetGame} />
                 </Animated.View>
               

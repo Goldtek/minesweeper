@@ -1,4 +1,4 @@
 import { Dimensions } from 'react-native';
 
-export const BOARD_SIZE = 10;
-export const CELL_SIZE = 35;
+export const BOARD_SIZE = 10; // number of rows and columns
+export const CELL_SIZE = 34;
