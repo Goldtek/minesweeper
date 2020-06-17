@@ -12,10 +12,14 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		219D45DF8DFD71E875327249 /* libPods-minesweeper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7415CD0D691E68582E657E3 /* libPods-minesweeper.a */; };
+		25B3444612211399A8EF866D /* libPods-minesweeper-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 924F2B7592E8BE3FA1DEB669 /* libPods-minesweeper-tvOS.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* minesweeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* minesweeperTests.m */; };
+		B35100A740F9D7525708F6FA /* libPods-minesweeper-minesweeperTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42939EC42C7BBA486B92AF14 /* libPods-minesweeper-minesweeperTests.a */; };
+		E54D809EA3F080073EDE4F86 /* libPods-minesweeper-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8D39F5F32E7A0E7853E855F /* libPods-minesweeper-tvOSTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +53,20 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = minesweeper/main.m; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* minesweeper-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "minesweeper-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* minesweeper-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "minesweeper-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42939EC42C7BBA486B92AF14 /* libPods-minesweeper-minesweeperTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-minesweeper-minesweeperTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C08EF67777A240279312555 /* Pods-minesweeper-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minesweeper-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-minesweeper-tvOSTests/Pods-minesweeper-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		6FD104826C0241695A2657D5 /* Pods-minesweeper-minesweeperTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minesweeper-minesweeperTests.release.xcconfig"; path = "Target Support Files/Pods-minesweeper-minesweeperTests/Pods-minesweeper-minesweeperTests.release.xcconfig"; sourceTree = "<group>"; };
+		924F2B7592E8BE3FA1DEB669 /* libPods-minesweeper-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-minesweeper-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A46E20E74C5857CE14A5789D /* Pods-minesweeper-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minesweeper-tvOS.release.xcconfig"; path = "Target Support Files/Pods-minesweeper-tvOS/Pods-minesweeper-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		C039644BAEF07BDCBF03C1B7 /* Pods-minesweeper-minesweeperTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minesweeper-minesweeperTests.debug.xcconfig"; path = "Target Support Files/Pods-minesweeper-minesweeperTests/Pods-minesweeper-minesweeperTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C43557DFB07CA7FFF728259E /* Pods-minesweeper-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minesweeper-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-minesweeper-tvOS/Pods-minesweeper-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		CDA7ADA27CEC5875A81398D4 /* Pods-minesweeper-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minesweeper-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-minesweeper-tvOSTests/Pods-minesweeper-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D2CF6922E0BF4DC0B4AC8FEE /* Pods-minesweeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minesweeper.release.xcconfig"; path = "Target Support Files/Pods-minesweeper/Pods-minesweeper.release.xcconfig"; sourceTree = "<group>"; };
+		D7415CD0D691E68582E657E3 /* libPods-minesweeper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-minesweeper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F8D39F5F32E7A0E7853E855F /* libPods-minesweeper-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-minesweeper-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBE8502A65F9CAA0A884BE9B /* Pods-minesweeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minesweeper.debug.xcconfig"; path = "Target Support Files/Pods-minesweeper/Pods-minesweeper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B35100A740F9D7525708F6FA /* libPods-minesweeper-minesweeperTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				219D45DF8DFD71E875327249 /* libPods-minesweeper.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25B3444612211399A8EF866D /* libPods-minesweeper-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E54D809EA3F080073EDE4F86 /* libPods-minesweeper-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,11 +136,31 @@
 			name = minesweeper;
 			sourceTree = "<group>";
 		};
+		1544EDEC24CBB3CCF886A7C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FBE8502A65F9CAA0A884BE9B /* Pods-minesweeper.debug.xcconfig */,
+				D2CF6922E0BF4DC0B4AC8FEE /* Pods-minesweeper.release.xcconfig */,
+				C039644BAEF07BDCBF03C1B7 /* Pods-minesweeper-minesweeperTests.debug.xcconfig */,
+				6FD104826C0241695A2657D5 /* Pods-minesweeper-minesweeperTests.release.xcconfig */,
+				C43557DFB07CA7FFF728259E /* Pods-minesweeper-tvOS.debug.xcconfig */,
+				A46E20E74C5857CE14A5789D /* Pods-minesweeper-tvOS.release.xcconfig */,
+				CDA7ADA27CEC5875A81398D4 /* Pods-minesweeper-tvOSTests.debug.xcconfig */,
+				5C08EF67777A240279312555 /* Pods-minesweeper-tvOSTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
+				D7415CD0D691E68582E657E3 /* libPods-minesweeper.a */,
+				42939EC42C7BBA486B92AF14 /* libPods-minesweeper-minesweeperTests.a */,
+				924F2B7592E8BE3FA1DEB669 /* libPods-minesweeper-tvOS.a */,
+				F8D39F5F32E7A0E7853E855F /* libPods-minesweeper-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,6 +180,7 @@
 				00E356EF1AD99517003FC87E /* minesweeperTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				1544EDEC24CBB3CCF886A7C1 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -164,6 +205,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "minesweeperTests" */;
 			buildPhases = (
+				B50ADB3ED0121B0A3593F5B4 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -182,6 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "minesweeper" */;
 			buildPhases = (
+				3E7A529FBB445BE01E7F64B5 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -201,6 +244,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "minesweeper-tvOS" */;
 			buildPhases = (
+				7B9ABEE98E9F8814FF6BE42C /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -220,6 +264,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "minesweeper-tvOSTests" */;
 			buildPhases = (
+				D7192AB83D6449400CC4B522 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -344,6 +389,94 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		3E7A529FBB445BE01E7F64B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-minesweeper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B9ABEE98E9F8814FF6BE42C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-minesweeper-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B50ADB3ED0121B0A3593F5B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-minesweeper-minesweeperTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7192AB83D6449400CC4B522 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-minesweeper-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -449,6 +582,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C039644BAEF07BDCBF03C1B7 /* Pods-minesweeper-minesweeperTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -471,6 +605,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FD104826C0241695A2657D5 /* Pods-minesweeper-minesweeperTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -490,6 +625,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBE8502A65F9CAA0A884BE9B /* Pods-minesweeper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -516,6 +652,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2CF6922E0BF4DC0B4AC8FEE /* Pods-minesweeper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -536,6 +673,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C43557DFB07CA7FFF728259E /* Pods-minesweeper-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -563,6 +701,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A46E20E74C5857CE14A5789D /* Pods-minesweeper-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -590,6 +729,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDA7ADA27CEC5875A81398D4 /* Pods-minesweeper-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -616,6 +756,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C08EF67777A240279312555 /* Pods-minesweeper-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

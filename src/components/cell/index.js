@@ -65,7 +65,7 @@ class Cell extends Component {
     render() {
         if (!this.state.opened){
             return (
-                <TouchableOpacity onPress={() => { this.onOpen(true); }}>
+                <TouchableOpacity onPress={() => { this.onOpen(true) }}>
                     <View style={[ styles.cell, { width: CELL_SIZE, height: CELL_SIZE }]}/>
                 </TouchableOpacity>
             )

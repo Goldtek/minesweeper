@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
-  Button,
+  Easing,
   Animated,
-  Text
+  Text,
+  TouchableOpacity,
+  Platform,
 } from 'react-native';
 import Cell from './src/components/cell';
 import { BOARD_SIZE, CELL_SIZE, runAnimation } from './src/lib';
@@ -13,8 +15,8 @@ export default class App extends Component {
     constructor(props){
         super(props);
 
-        this.moveAnimation = new Animated.Value(160);
-        
+        this.moveAnimation = new Animated.Value(Platform.OS === 'android' ? 160 : 290);
+        this.animatedView = new Animated.Value(1);
         this.boardWidth = CELL_SIZE * BOARD_SIZE;
 
         // initialize each cell in the grid 
@@ -26,11 +28,32 @@ export default class App extends Component {
     }
 
     showRetry = () => {
-      runAnimation(this.moveAnimation, -150);
+      Animated.spring(this.moveAnimation, {
+        toValue: -190,
+        duration: 1000,
+        useNativeDriver: true,
+        easing: Easing.out
+      }).start(
+        ()=>{
+          Animated.timing(this.animatedView,{
+            toValue : 1.4,
+            duration : 500,
+            useNativeDriver: true,
+          }).start(
+            ()=>{
+              Animated.timing(this.animatedView,{
+                toValue : 1,
+                duration : 500,
+                useNativeDriver: true,
+              }).start();
+            }
+          );
+        })
+     
     }
 
     hideRetry = () => {
-      runAnimation(this.moveAnimation, 160);
+      runAnimation(this.moveAnimation, Platform.OS === 'android' ? 160 : 290);
     }
 
     onDie = () => {
@@ -99,7 +122,7 @@ export default class App extends Component {
 
     }
 
-    resetGame = () => {
+    reset = () => {
       this.hideRetry();
         for(let i=0; i< BOARD_SIZE; i++){
             for(let j=0; j< BOARD_SIZE; j++){
@@ -109,14 +132,21 @@ export default class App extends Component {
     }
 
     render() {
+      const animatedStyle = { transform : []}
         return (
             <View style={styles.container}>
                 <View style={{ width: this.boardWidth, height: this.boardWidth, backgroundColor: '#888888', flexDirection: 'column'}}>
                     {this.renderBoard()}
                 </View>
-                <Animated.View style={{ transform: [{translateY: this.moveAnimation}] }}>
-                  <Text style={{ color: '#fff' }}> You loose !!! </Text>
-                  <Button title="Retry" onPress={this.resetGame} />
+                <Animated.View style={[{ transform: [{translateY: this.moveAnimation}, { scale : this.animatedView }] }]}>
+                  <Text style={{ color: '#fff', fontSize: 16 }}> You loose !!! </Text>
+              
+                  <TouchableOpacity activeOpacity={0.7} onPress={this.reset}>
+                    <Animated.View style={[styles.button, animatedStyle]}>
+                      <Text style={styles.buttonText}> Retry </Text>
+                    </Animated.View>
+                  </TouchableOpacity>
+                  
                 </Animated.View>
               
             </View>
@@ -130,5 +160,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#fff'
+    },
+    button: {
+      backgroundColor: '#2196f9',
+      padding: 8,
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 10,
+    },
+
+    buttonText: {
+      color: '#fff',
+      fontSize: 16,
     }
+
 });

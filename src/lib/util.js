@@ -1,6 +1,6 @@
 import { Animated, Easing } from 'react-native';
 
-export const runAnimation = (el, position) => {
+export const runAnimation = (el, position ) => {
     Animated.spring(el, {
         toValue: position,
         duration: 1000,
