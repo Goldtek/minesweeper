@@ -3,12 +3,14 @@ import {
   View,
   TouchableOpacity,
   Image,
-  Text
+  Text,
+  Alert
 } from 'react-native';
 
 import { CELL_SIZE } from '../../lib'
 import styles from './styles';
 import mines from '../../assets/images/mine.png';
+import flag from '../../assets/images/flag.png';
 
 class Cell extends Component {
     constructor(props){
@@ -18,7 +20,8 @@ class Cell extends Component {
             opened: false,
             isMine: Math.random() < 0.25, // 25% of the cells should mine
             neighbors: null,
-            clickedMine: false
+            clickedMine: false,
+            flagged: false,
         }
     }
 
@@ -37,7 +40,7 @@ class Cell extends Component {
             return;
         }
 
-        if (!userClicked && this.state.isMine){
+        if (!userClicked && this.state.isMine || this.state.flagged){
             return;
         }
 
@@ -58,17 +61,31 @@ class Cell extends Component {
             opened: false,
             isMine: Math.random() < 0.2,
             neighbors: null,
-            clickedMine: false
+            clickedMine: false,
+            flagged: false,
         })
+    }
+
+    onFlag = () => {
+        this.setState({ flagged: true });
     }
 
     render() {
         if (!this.state.opened){
-            return (
-                <TouchableOpacity onPress={() => { this.onOpen(true) }} onLongPress>
-                    <View style={[ styles.cell, { width: CELL_SIZE, height: CELL_SIZE }]}/>
-                </TouchableOpacity>
-            )
+            if (this.state.flagged){
+                return (
+                    <View style={[ styles.cell, { width: CELL_SIZE, height: CELL_SIZE }]}>
+                        <Image source={flag} style={{ width: CELL_SIZE / 2, height: CELL_SIZE / 2}} resizeMode="contain" />
+                    </View>
+                )
+            } else {
+                return (
+                    <TouchableOpacity onPress={() => { this.onOpen(true) }} onLongPress={this.onFlag}>
+                        <View style={[ styles.cell, { width: CELL_SIZE, height: CELL_SIZE }]}/>
+                    </TouchableOpacity>
+                )
+            }
+           
         } else {
             let cellContent = null;
             if (this.state.isMine){

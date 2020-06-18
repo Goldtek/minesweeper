@@ -8,6 +8,8 @@ export default StyleSheet.create({
         borderTopColor: '#ffffff',
         borderRightColor: '#7d7d7d',
         borderLeftColor: '#ffffff',
+        alignItems: 'center',
+        justifyContent: 'center'
        
     },
     cellOpened: {
