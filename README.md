@@ -1,12 +1,12 @@
-## MineSweeper Game is developed uing React Native
+# MineSweeper Game is developed uing React Native
 
 Running the project
-# install the NPM Packages
+## install the NPM Packages
 npm install
 
-# for IOS
+## for IOS
 cd ios && pod install && cd ..
 react-native run-ios
 
-# for android 
+## for android 
 react-native run-android
